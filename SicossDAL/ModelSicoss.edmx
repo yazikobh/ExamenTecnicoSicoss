@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PruebaSicossModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="opeHistorialSuperDigito">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cDigito" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="cResultado" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="fkIdUsuario" Type="int" Nullable="false" />
+          <Property Name="bActivo" Type="bit" Nullable="false" />
+          <Property Name="dtFechaRegistro" Type="datetime" Nullable="false" />
+          <Property Name="dtFechaConsulta" Type="datetime" />
+        </EntityType>
+        <EntityType Name="opeUsuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cPassword" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="dtFechaRegistro" Type="datetime" Nullable="false" />
+          <Property Name="dtFechaActualiza" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_opeHistorialSuperDigito_opeUsuario">
+          <End Role="opeUsuario" Type="Self.opeUsuario" Multiplicity="1" />
+          <End Role="opeHistorialSuperDigito" Type="Self.opeHistorialSuperDigito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opeUsuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="opeHistorialSuperDigito">
+              <PropertyRef Name="fkIdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PruebaSicossModelStoreContainer">
+          <EntitySet Name="opeHistorialSuperDigito" EntityType="Self.opeHistorialSuperDigito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="opeUsuario" EntityType="Self.opeUsuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_opeHistorialSuperDigito_opeUsuario" Association="Self.FK_opeHistorialSuperDigito_opeUsuario">
+            <End Role="opeUsuario" EntitySet="opeUsuario" />
+            <End Role="opeHistorialSuperDigito" EntitySet="opeHistorialSuperDigito" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PruebaSicossModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="opeHistorialSuperDigito">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cDigito" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cResultado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fkIdUsuario" Type="Int32" Nullable="false" />
+          <Property Name="bActivo" Type="Boolean" Nullable="false" />
+          <Property Name="dtFechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtFechaConsulta" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="opeUsuario" Relationship="Self.FK_opeHistorialSuperDigito_opeUsuario" FromRole="opeHistorialSuperDigito" ToRole="opeUsuario" />
+        </EntityType>
+        <EntityType Name="opeUsuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cPassword" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dtFechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtFechaActualiza" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="opeHistorialSuperDigito" Relationship="Self.FK_opeHistorialSuperDigito_opeUsuario" FromRole="opeUsuario" ToRole="opeHistorialSuperDigito" />
+        </EntityType>
+        <Association Name="FK_opeHistorialSuperDigito_opeUsuario">
+          <End Role="opeUsuario" Type="Self.opeUsuario" Multiplicity="1" />
+          <End Role="opeHistorialSuperDigito" Type="Self.opeHistorialSuperDigito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="opeUsuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="opeHistorialSuperDigito">
+              <PropertyRef Name="fkIdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PruebaSicossEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="opeHistorialSuperDigito" EntityType="Self.opeHistorialSuperDigito" />
+          <EntitySet Name="opeUsuario" EntityType="Self.opeUsuario" />
+          <AssociationSet Name="FK_opeHistorialSuperDigito_opeUsuario" Association="Self.FK_opeHistorialSuperDigito_opeUsuario">
+            <End Role="opeUsuario" EntitySet="opeUsuario" />
+            <End Role="opeHistorialSuperDigito" EntitySet="opeHistorialSuperDigito" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PruebaSicossModelStoreContainer" CdmEntityContainer="PruebaSicossEntities">
+          <EntitySetMapping Name="opeHistorialSuperDigito">
+            <EntityTypeMapping TypeName="PruebaSicossModel.opeHistorialSuperDigito">
+              <MappingFragment StoreEntitySet="opeHistorialSuperDigito">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="cDigito" ColumnName="cDigito" />
+                <ScalarProperty Name="cResultado" ColumnName="cResultado" />
+                <ScalarProperty Name="fkIdUsuario" ColumnName="fkIdUsuario" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+                <ScalarProperty Name="dtFechaRegistro" ColumnName="dtFechaRegistro" />
+                <ScalarProperty Name="dtFechaConsulta" ColumnName="dtFechaConsulta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="opeUsuario">
+            <EntityTypeMapping TypeName="PruebaSicossModel.opeUsuario">
+              <MappingFragment StoreEntitySet="opeUsuario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="cUsuario" ColumnName="cUsuario" />
+                <ScalarProperty Name="cPassword" ColumnName="cPassword" />
+                <ScalarProperty Name="dtFechaRegistro" ColumnName="dtFechaRegistro" />
+                <ScalarProperty Name="dtFechaActualiza" ColumnName="dtFechaActualiza" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
