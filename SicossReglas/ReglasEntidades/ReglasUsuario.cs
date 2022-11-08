@@ -73,7 +73,7 @@ namespace SicossReglas.ReglasEntidades
             throw new NotImplementedException();
         }
 
-        public ModeloRespuesta ObtenerPorCorreoContrasenia(string passw, string usuario)
+        public ModeloRespuesta ObtenerPorUsuarioContrasenia(string passw, string usuario)
         {
             ModeloRespuesta respuesta = new ModeloRespuesta();
             respuesta.ActualizarRespuesta(CodigosRespuesta.Exito, "El usuario ha sido autentificado con éxito.");
