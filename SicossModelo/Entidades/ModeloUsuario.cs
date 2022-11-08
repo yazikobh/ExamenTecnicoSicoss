@@ -11,6 +11,7 @@ namespace SicossModelo.Entidades
         public int Id { get; set; }
         public string Usuario { get; set; }
         public string Password { get; set; }
+        public string IP { get; set; }
 
         public ModeloUsuario()
         {
