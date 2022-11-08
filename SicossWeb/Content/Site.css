@@ -1,12 +1,13 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+/*    padding-top: 50px;
+    padding-bottom: 20px;*/
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+/*    padding-left: 15px;
+    padding-right: 15px;*/
+
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +22,27 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.contenedor-login {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 75vh;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor-formulario-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-modal-registro-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }

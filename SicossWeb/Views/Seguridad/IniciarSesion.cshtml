@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "IniciarSesion";
+}
+
+
+@section stylesheets{
+    <link href="~/Content/Site.css" rel="stylesheet" />
+}
+
+@section scripts{
+    <script src="~/Scripts/javascript/Pages/Seguridad/IniciarSesion.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
+}
+
+
+<div class="contenedor-login">
+    <div class="contenedor-formulario-login">
+        <h2>Super digito</h2>
+        <div>
+            <label>Usuario</label>
+            <input class="form-control" id="txtNombreUsuario" />
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" class="form-control" id="txtPasswordUsuario" />
+        </div>
+        <div>
+            <button class="btn" id="btnIniciarSesion">Iniciar Sesión</button>
+            <button class="btn" id="btnAbrirModalRegistro">Registrar</button>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_PartialRegistrarUsuario")

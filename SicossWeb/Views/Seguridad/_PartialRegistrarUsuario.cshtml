@@ -1,0 +1,31 @@
+﻿
+@*@using Newtonsoft.Json*@
+
+<div class="modal fade" id="mdlUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle" style="text-align: center;">Registro Usuario</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="contenedor-modal-registro-usuario">
+                    <label>Nombre Usiario</label>
+                    <input type="text" class="form-control" id="txtNombreUsuario" />
+                    <label>Contraseña</label>
+                    <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña" />
+                    <label>Confirmar Contraseña</label>
+                    <input type="password" class="form-control" id="txtPasswordConfirmar" placeholder="Confirmar Contreseña" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-success" id="btnAgregarUsuario">Crear usuario</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<input type="hidden" value="@JsonConvert.SerializeObject(Model)" id="txtModelActividad" />*@

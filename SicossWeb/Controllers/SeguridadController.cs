@@ -1,4 +1,5 @@
-﻿using RepuestaModelos;
+﻿using Newtonsoft.Json;
+using RepuestaModelos;
 using SicossLectorWebConfig;
 using SicossModelo.Entidades;
 using SicossWeb.App_Start;
@@ -46,6 +47,15 @@ namespace SicossWeb.Controllers
             }
             return AyudanteSitio.Instancia.EnviarRespuestaAjax(respuesta, Response);
         }
+
+        [HttpPost]
+        public ActionResult CrearUsuario(string modelo)
+        {
+            ModeloUsuario usuario = JsonConvert.DeserializeObject<ModeloUsuario>(modelo);
+            ModeloRespuesta respuesta = SicossReglas.ReglasEntidades.ReglasUsuario.Instancia.Agregar(usuario);
+            return AyudanteSitio.Instancia.EnviarRespuestaAjax(respuesta, Response);
+        }
+
         public ActionResult Logout()
         {
             AyudanteSitio.Instancia.Logout(Session);
