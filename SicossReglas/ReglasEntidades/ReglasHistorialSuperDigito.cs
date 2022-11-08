@@ -122,4 +122,5 @@ namespace SicossReglas.ReglasEntidades
             return resultado;
         }
     }
+
 }
