@@ -52,7 +52,7 @@
         let fintd = "</td>";
         for (var i = 0; i < data.length; i++) {
             body = body + inicioTr
-                + iniciotd + GenerarBotonesOperacionEliminar(data[i].Id) + fintd
+                + iniciotd + GenerarBotonesOperaciones(data[i].Id, data[i].Digito) + fintd
                 + iniciotd + data[i].Digito + fintd
                 + iniciotd + data[i].Resultado + fintd
                 + iniciotd + data[i].FechaConsulta + fintd
@@ -113,6 +113,22 @@
         )
     }
 
+    SuperDigitoDetalle(digito) {
+        let me = this;
+        let data = [];
+        data.push(ItemParaAjax('digito', digito));
+        let urlPeticion = RaizDeAplicacion() + URLConsultarDetalleSuperDigito;
+        LlamarAjax(
+            urlPeticion,
+            data,
+            function (data) {
+                if (data.Codigo == 0) {
+                    swal("Detalle", data.Valor);
+                }
+            }
+        )
+    }
+
 }
 
 $(document).ready(function () {
@@ -125,11 +141,23 @@ $(document).ready(function () {
     });
 
     $('#bodyTable').on('click', '[id^="eliminar"]', function () {
+        if (confirm("Se limpiará el registro, ¿Está seguro?")) {
+
+        }
         let dataset = $(this)[0].dataset;
         objecto.EliminarPorId(dataset.id);
     });
 
     $('#btnLimpiarHistorial').click(function () {
-        objecto.EliminarPorUsuario();
+        if (confirm("Se limpiará el historial, ¿Está seguro?")) {
+            objecto.EliminarPorUsuario();
+        }
+        
     });
+
+    $('#bodyTable').on('click', '[id^="detalle"]', function () {
+        let dataset = $(this)[0].dataset;
+        objecto.SuperDigitoDetalle(dataset.digito);
+    });
+
 });

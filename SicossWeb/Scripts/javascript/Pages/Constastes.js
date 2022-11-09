@@ -6,3 +6,5 @@ const URLCalcularSuperDigito = 'SuperDigito/CalcularSuperDigito';
 const URLConsultaPorDigito = 'SuperDigito/ConsultaPorDigito';
 const URLEliminarHistorialPorId = 'SuperDigito/EliminarHistorialPorId';
 const URLEliminarHistorialPorUsuario = 'SuperDigito/LimpiparHistorial';
+
+const URLConsultarDetalleSuperDigito = 'SuperDigito/SuperDigitoDetalle';

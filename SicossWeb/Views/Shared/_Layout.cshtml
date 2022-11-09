@@ -8,6 +8,7 @@
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
 <body>
     @*<div class="navbar navbar-inverse navbar-fixed-top">
@@ -40,6 +41,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="~/Scripts/javascript/Pages/theme.custom.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
     <script src="~/Scripts/javascript/Pages/Constastes.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
     @RenderSection("scripts", required: false)

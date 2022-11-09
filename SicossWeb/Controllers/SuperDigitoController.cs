@@ -65,5 +65,12 @@ namespace SicossWeb.Controllers
             ModeloRespuesta respuesta = SicossReglas.ReglasEntidades.ReglasHistorialSuperDigito.Instancia.LimpiarHistorialPorUsuario(idUsuario);
             return AyudanteSitio.Instancia.EnviarRespuestaAjax(respuesta, Response);
         }
+
+        [HttpPost]
+        public ActionResult SuperDigitoDetalle(int digito)
+        {
+            ModeloRespuesta respuesta = SicossReglas.ReglasEntidades.ReglasSuperDigito.Instancia.ObtenerSuperDigito(digito,true);
+            return AyudanteSitio.Instancia.EnviarRespuestaAjax(respuesta, Response);
+        }
     }
 }
