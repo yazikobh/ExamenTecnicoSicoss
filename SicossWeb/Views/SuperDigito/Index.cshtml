@@ -1,0 +1,47 @@
+﻿@using Newtonsoft.Json
+@{
+    ViewBag.Title = "Super Digito";
+    SicossModelo.Entidades.ModeloUsuario usuario = SicossWeb.App_Start.AyudanteSitio.Instancia.UsuarioFirmado(Context);
+}
+@section scripts{
+    <script src="~/Scripts/javascript/Pages/SuperDigito/SuperDigito.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
+}
+
+@Html.ActionLink("Cerrar Sesion", "Logout", "Seguridad")
+<div class="contenedor-super-digito">
+    <h2>Super Digito</h2>
+    <div class="contenedor-super-digito-controles">
+
+        <div>
+            <input type="number" class="form-control" id="txtDigito" value="1" placeholder="Número" />
+        </div>
+        <div>
+            <input type="text" class="form-control" id="txtResultado" placeholder="Resultado" />
+        </div>
+        <div>
+            <button class="btn btn-primary" id="btnCalcularSuperDigito">Calcular</button>
+        </div>
+    </div>
+    <div class="contenedor-historial">
+        <div>
+            <h4>Historial</h4>
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Numero</th>
+                        <th>Resultado</th>
+                        <th>Fecha hora</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTable"></tbody>
+            </table>
+        </div>
+        
+    </div>
+    <div class="contenedor-limpiar-histotial">
+        <button class="btn btn-danger" id="btnLimpiarHistorial">Borrar Historial</button>
+    </div>
+</div>
+
+@Html.Hidden("ModelUsuario", JsonConvert.SerializeObject(usuario))

@@ -13,7 +13,18 @@ namespace SicossModelo.Entidades
         public string Resultado { get; set; }
         public int IdUsuario { get; set; }
         public bool Activo { get; set; }
-        public DateTime FechaRegistro { get; set; }
-        public DateTime? FechaConsulta { get; set; }
+        public string FechaRegistro { get; set; }
+        public string FechaConsulta { get; set; }
+        public ModeloHistorialSuperDigito()
+        {
+
+        }
+        public ModeloHistorialSuperDigito(int id,string digito,string resultado,int idusuario)
+        {
+            this.Id = id;
+            this.Digito = digito;
+            this.Resultado = resultado;
+            this.IdUsuario = idusuario;
+        }
     }
 }

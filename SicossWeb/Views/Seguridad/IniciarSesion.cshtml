@@ -5,7 +5,7 @@
 
 
 @section stylesheets{
-    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/Site.css?v=@DateTime.Now.ToString("yyyyMMddHHmmss")" rel="stylesheet" />
 }
 
 @section scripts{
@@ -24,9 +24,9 @@
             <label>Password</label>
             <input type="password" class="form-control" id="txtPasswordUsuario" />
         </div>
-        <div>
-            <button class="btn" id="btnIniciarSesion">Iniciar Sesión</button>
-            <button class="btn" id="btnAbrirModalRegistro">Registrar</button>
+        <div class="contenedor-botones-login">
+            <button class="btn btn-success" id="btnIniciarSesion">Iniciar Sesión</button>
+            <button class="btn btn-primary" id="btnAbrirModalRegistro">Registrar</button>
         </div>
     </div>
 </div>

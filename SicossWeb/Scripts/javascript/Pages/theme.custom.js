@@ -35,3 +35,11 @@ function MostrarImagenCargado() {
 function OcultarImagenCargado() {
     $("#contenedorLoading").prop("hidden", true);
 }
+
+function GenerarBotonesOperacionEliminar(id) {
+    let elementoDivInicio = '<div class="botones" style="display:flex;flex-direction: row;justify-content: center;gap:1rem">'
+    let elementoDivFin = '</div>'
+    let botonEditar = '<button id="eliminar_' + id + '" data-id="' + id + '" class="btn btn-danger">Eliminar</button>';
+    let resultado = elementoDivInicio + botonEditar + elementoDivFin;
+    return resultado;
+}

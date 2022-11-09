@@ -19,14 +19,14 @@ namespace SicossWeb.Controllers
             ModeloUsuario user = new ModeloUsuario();
             if (VariablesWebConfig.SessionAsCookie && Request.Cookies[AyudanteSitio.UserSession] != null)
             {
-                return RedirectToAction("BuscarDocumento", "Archivo");
+                return RedirectToAction("Index", "SuperDigito");
             }
             if (user.Id == 0)
                 return View(user);
             else
             {
                 AyudanteSitio.Instancia.EstablecerSesionUsuario(this.HttpContext, user, false);
-                return RedirectToAction("BuscarDocumento", "Archivo");
+                return RedirectToAction("Index", "SuperDigito");
             }
         }
         [HttpPost]

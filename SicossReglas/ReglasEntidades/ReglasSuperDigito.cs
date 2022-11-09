@@ -31,7 +31,7 @@ namespace SicossReglas.ReglasEntidades
 
                 if (digitos == 1)
                 {
-                    resultado.ActualizarRespuesta(CodigosRespuesta.Exito, "Éxito", numero);
+                    resultado.ActualizarRespuesta(CodigosRespuesta.Exito, "Éxito", numero.ToString());
                     return resultado;
                 }
 

@@ -8,14 +8,19 @@
             urlPeticion,
             data,
             function (data) {
-                console.log(data);
+                if (!data.Exito) {
+                    alert(data.Mensaje)
+                    $('#txtPasswordUsuario').val('');
+                    return;
+                }
+                window.location.replace(RaizDeAplicacion() + "SuperDigito/Index");
             }
         )
     }
     RegistrarUsuario() {
         let objeto = {};
 
-        if ($('#txtNombreUsuario').val() === "") {
+        if ($('#txtNombreUsuarioRegistro').val() === "") {
             alert("Debe ingresar un nombre de usuario")
             return;
         }
@@ -34,7 +39,11 @@
             urlPeticion,
             data,
             function (data) {
-                console.log(data);
+                if (!data.Exito) {
+                    alert(data.Mensaje)
+                    return;
+                }
+                $('#mdlUsuario').modal("hide");
             }
         )
     }
@@ -50,5 +59,10 @@ $(document).ready(function () {
     });
     $('#btnIniciarSesion').click(function () {
         objectoIniciarSesion.IniciarSession();
+    });
+    $("#txtPasswordUsuario").keypress(function (e) {
+        if (e.keyCode == 13) {
+            $("#btnIniciarSesion").click();
+        }
     });
 });

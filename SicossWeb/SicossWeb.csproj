@@ -136,6 +136,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SeguridadController.cs" />
+    <Compile Include="Controllers\SuperDigitoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -156,6 +157,7 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\javascript\Pages\Constastes.js" />
     <Content Include="Scripts\javascript\Pages\Seguridad\IniciarSesion.js" />
+    <Content Include="Scripts\javascript\Pages\SuperDigito\SuperDigito.js" />
     <Content Include="Scripts\javascript\Pages\theme.custom.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -183,6 +185,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Seguridad\IniciarSesion.cshtml" />
     <Content Include="Views\Seguridad\_PartialRegistrarUsuario.cshtml" />
+    <Content Include="Views\SuperDigito\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -37,6 +37,7 @@ textarea {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
 }
 
 .contenedor-modal-registro-usuario {
@@ -44,5 +45,39 @@ textarea {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
+}
+
+.contenedor-super-digito {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 75vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-super-digito-controles {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-historial {
+    text-align: center;
+}
+
+.contenedor-limpiar-histotial {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    width: 44%
+}
+
+.contenedor-botones-login {
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
 }
