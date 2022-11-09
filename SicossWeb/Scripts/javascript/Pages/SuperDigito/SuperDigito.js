@@ -90,7 +90,6 @@
             data,
             function (data) {
                 if (data.Codigo == 0) {
-                    //$('#txtResultado').val(data.Valor.Resultado);
                     me.ObtenerHistorialUsuario();
                 }
             }
