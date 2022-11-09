@@ -7,9 +7,12 @@
     <script src="~/Scripts/javascript/Pages/SuperDigito/SuperDigito.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
 }
 
-@Html.ActionLink("Cerrar Sesion", "Logout", "Seguridad")
+
 <div class="contenedor-super-digito">
-    <h2>Súper Dígito</h2>
+    <div class="contenedor-titulos-super-digito">
+        <h2>Súper Dígito</h2>
+        @Html.ActionLink("Cerrar Sesion", "Logout", "Seguridad")
+    </div>
     <div class="contenedor-super-digito-controles">
 
         <div>

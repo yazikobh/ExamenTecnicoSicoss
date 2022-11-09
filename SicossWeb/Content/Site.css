@@ -81,3 +81,10 @@ textarea {
     flex-direction: row;
     gap: 1rem;
 }
+.contenedor-titulos-super-digito {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
